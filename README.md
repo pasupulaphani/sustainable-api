@@ -1,6 +1,8 @@
 # yahoo finance made easy
 
-#### get today data
+Demo: https://yahoo-fin.herokuapp.com/now/AAPL
+
+#### get current data
 
 */now/:company_symbol*
 
