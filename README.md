@@ -1,36 +1,42 @@
-# node-js-getting-started
+# yahoo finance made easy
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+#### get today data
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+*/now/:company_symbol*
 
-## Running Locally
+	http://localhost:5000/now/AAPL
+	
+	{
+	    name: "Apple Inc."
+	    price: 128.78
+	}
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
+#### get hist data
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+*hist/aapl?from=:from_date&to=:to_date*
 
-## Deploying to Heroku
+	http://localhost:5000/hist/aapl?from=2012-01-01&to=2012-12-31
 
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+	[
+		{
+			date: "2012-01-03T00:00:00.000Z"
+			open: 409.39996
+			high: 412.5
+			low: 409
+			close: 411.22998
+			volume: 75555200
+			adjClose: 55.18312
+			symbol: "aapl"
+		},
+		{
+			date: "2012-01-04T00:00:00.000Z"
+			open: 410
+			high: 414.68002
+			low: 409.28
+			close: 413.44
+			volume: 65005500
+			adjClose: 55.47969
+			symbol: "aapl"
+		}....
+	]
