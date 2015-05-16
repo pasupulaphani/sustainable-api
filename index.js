@@ -7,6 +7,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/now/:symb', function(request, response) {
 
+	response.header("Access-Control-Allow-Origin", "*");
 	yahooFinance.snapshot({
 	  symbol: request.param('symb'),
 	  period: 's'
@@ -20,6 +21,7 @@ app.get('/now/:symb', function(request, response) {
 
 app.get('/hist/:symb', function(request, response) {
 
+	response.header("Access-Control-Allow-Origin", "*");
 	yahooFinance.historical({
 	  symbol: request.param('symb'),
 	  from: request.query.from,
