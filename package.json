@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "~4.9.x",
+    "google-finance": "^0.1.4",
     "yahoo-finance": "^0.2.11"
   },
   "engines": {

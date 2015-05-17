@@ -1,5 +1,7 @@
 var express = require('express');
 var yahooFinance = require('yahoo-finance');
+var googleFinance = require('google-finance');
+
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -16,6 +18,16 @@ app.get('/now/:symb', function(request, response) {
 	  	name: quotes.name,
 	  	price: quotes.bid
 	  })
+	});
+});
+
+app.get('/news/:symb', function(request, response) {
+
+	response.header("Access-Control-Allow-Origin", "*");
+	googleFinance.companyNews({
+	  symbol: 'NASDAQ:' + request.param('symb')
+	}, function (err, news) {
+	  response.json(news)
 	});
 });
 
