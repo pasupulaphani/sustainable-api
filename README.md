@@ -16,7 +16,7 @@ Demo: https://sustainable-api.herokuapp.com/now/AAPL
 
 #### get hist prices
 
-*hist/aapl?from=:from_date&to=:to_date*
+*hist/:company_symbol?from=:from_date&to=:to_date*
 
 	https://sustainable-api.herokuapp.com/hist/aapl?from=2012-01-01&to=2012-12-31
 
@@ -45,7 +45,7 @@ Demo: https://sustainable-api.herokuapp.com/now/AAPL
 
 #### get latest news
 
-*news/aapl*
+*news/:company_symbol*
 
 	https://sustainable-api.herokuapp.com/news/aapl
 
